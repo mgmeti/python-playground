@@ -17,11 +17,11 @@ def health_check():
 @app.get("/dbtest")
 def db_test():
     try:
-        conn = pyscopg2.connect(
-            db_host = os.getenv("DB_HOST", "localhost"),
-            db_name = os.getenv("DB_NAME", "dbtest"),
-            db_user = os.getenv("DB_USER", "postgres"),
-            db_password = os.getenv("DB_PASSWORD", "postgres")
+        conn = psycopg2.connect(
+            host = os.getenv("DB_HOST", "db"),
+            database = os.getenv("DB_NAME", "dbtest"),
+            user = os.getenv("DB_USER", "postgres"),
+            password = os.getenv("DB_PASSWORD", "postgres")
         )
         conn.close()
         return {"status": "ok", "db": "connected"}
