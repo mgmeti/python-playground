@@ -1,0 +1,5 @@
+boto3
+pydantic
+opensearch-py
+pytest
+requests
