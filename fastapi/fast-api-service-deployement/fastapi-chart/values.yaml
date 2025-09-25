@@ -1,0 +1,27 @@
+fastapi:
+  image: mgmeti/fast-api-service
+  tag: latest
+  port: 8000
+  replicas: 1
+  env:
+    DB_HOST: postgres-service
+    DB_NAME: dbtest
+    DB_USER: postgres
+    DB_PASSWORD: postgres
+  
+postgres:
+  image: postgres
+  tag: 15
+  port: 5432
+  db: dbtest
+  user: postgres
+  password: postgres
+  pvc_size: 1Gi
+
+ingress:
+  enabled: true
+  host: fastapi.local
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  tls: false
+
