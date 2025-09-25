@@ -3,7 +3,8 @@ name: FastAPI CI/CD
 on:
   push:
     branches:
-      - main   # trigger only when pushing to main branch
+      - main 
+      - dev  # trigger only when pushing to main and  dev branch
 
 jobs:
   build:
