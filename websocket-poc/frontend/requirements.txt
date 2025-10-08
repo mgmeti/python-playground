@@ -1,0 +1,3 @@
+streamlit
+websocket-client
+websockets==11.0.3
