@@ -14,7 +14,7 @@ MODEL_NAME = "gemini-2.5-flash"  # Use an available Gemini model
 
 def extract_skills_experience(text: str):
     prompt = f"""
-    Extract the skills and years of experience required from the following job description.
+    Extract the technical skills and years of experience required from the following job description.
 
     Return strictly in JSON format with fields:
     {{
